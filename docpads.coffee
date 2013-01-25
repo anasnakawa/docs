@@ -1,6 +1,11 @@
 # The DocPad Configuration File
 # It is simply a CoffeeScript Object which is parsed by CSON
 docpadConfig = {
+  
+  # =================================
+  # generated site at the root
+
+  # outPath: '.'
 
 	# =================================
 	# Template Data
@@ -37,9 +42,19 @@ docpadConfig = {
 			author: "Your Name"
 
 			# The website author's email
-			email: "your@email.com"
+      email: "anas.nakawa@gmail.com"
 
+    # =================================
+    # Plugins
 
+    # Enabled Plugins
+    # enabledPlugins:
+      
+      # Enable highlight js plugin
+      # highlightjs: true
+      
+      # Enable Sass plugin
+      # sass: true
 
 		# -----------------------------
 		# Helper Functions
