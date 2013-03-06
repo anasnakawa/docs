@@ -3,7 +3,7 @@
     <title>Your Website</title>
     <link href="http://website.com/atom.xml" rel="self"/>
     <link href="http://website.com"/>
-    <updated>2013-01-24T11:00:03.039Z</updated>
+    <updated>2013-03-06T19:22:41.826Z</updated>
     <id>http://website.com</id>
     <author>
         <name>Your Name</name>
@@ -52,7 +52,11 @@
     &lt;![endif]--&gt;
 
     &lt;!-- Styles --&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;/vendor/twitter-bootstrap/css/bootstrap.css&quot; /&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;/vendor/twitter-bootstrap/css/bootstrap-responsive.css&quot; /&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;/styles/style.css&quot; /&gt;
+    
+    
+    
+    
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;/components/bootstrap-sass/bootstrap-2.3.0.min.css&quot; /&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;/components/bootstrap-sass/bootstrap-2.3.0.min.css&quot; /&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;/styles/style.css&quot; /&gt;
 &lt;/head&gt;
 &lt;body&gt;
     &lt;!-- Markup --&gt;
@@ -87,15 +91,17 @@
 &lt;/footer&gt;
         &lt;/section&gt;
         &lt;footer&gt;
-            &lt;p&gt;&amp;copy; Company 2012&lt;/p&gt;
-            &lt;p style=&quot;float:right;&quot;&gt;
-                This website was last updated at 2013-01-24T11:00:03.039Z
-            &lt;/p&gt;
+            &lt;p&gt;&amp;copy; Docs 2013&lt;/p&gt;
         &lt;/footer&gt;
     &lt;/div&gt;&lt;!-- /container --&gt;
 
     &lt;!-- Scripts --&gt;
-    &lt;script defer=&quot;defer&quot;  src=&quot;/vendor/jquery.js&quot;&gt;&lt;/script&gt;&lt;script defer=&quot;defer&quot;  src=&quot;/vendor/log.js&quot;&gt;&lt;/script&gt;&lt;script defer=&quot;defer&quot;  src=&quot;/vendor/modernizr.js&quot;&gt;&lt;/script&gt;&lt;script defer=&quot;defer&quot;  src=&quot;/scripts/script.js&quot;&gt;&lt;/script&gt;
+    
+    
+    
+    
+    
+    &lt;script defer=&quot;defer&quot;  src=&quot;/vendor/jquery.js&quot;&gt;&lt;/script&gt;&lt;script defer=&quot;defer&quot;  src=&quot;/vendor/modernizr.js&quot;&gt;&lt;/script&gt;&lt;script defer=&quot;defer&quot;  src=&quot;/vendor/log.js&quot;&gt;&lt;/script&gt;&lt;script defer=&quot;defer&quot;  src=&quot;/scripts/script.js&quot;&gt;&lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 </content>

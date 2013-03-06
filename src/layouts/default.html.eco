@@ -34,7 +34,11 @@
 	<![endif]-->
 
 	<!-- Styles -->
-	<%- @getBlock('styles').add(["/vendor/twitter-bootstrap/css/bootstrap.css","/vendor/twitter-bootstrap/css/bootstrap-responsive.css","/styles/style.css"]).toHTML() %>
+	<% styles = [] %>
+	<% styles.push( '/components/bootstrap-sass/bootstrap-2.3.0.min.css' ) %>
+	<% styles.push( '/components/bootstrap-sass/bootstrap-2.3.0.min.css' ) %>
+	<% styles.push( '/styles/style.css' ) %>
+	<%- @getBlock('styles').add( styles ).toHTML() %>
 </head>
 <body>
 	<!-- Markup -->
@@ -57,14 +61,16 @@
 			<%- @content %>
 		</section>
 		<footer>
-			<p>&copy; Company 2012</p>
-			<p style="float:right;">
-				This website was last updated at <%= @site.date.toISOString() %>
-			</p>
+			<p>&copy; Docs <%= new Date().getFullYear()%></p>
 		</footer>
 	</div><!-- /container -->
 
 	<!-- Scripts -->
-	<%- @getBlock('scripts').add(["/vendor/jquery.js","/vendor/log.js","/vendor/modernizr.js","/scripts/script.js"]).toHTML() %>
+	<% scripts = [] %>
+	<% scripts.push( '/vendor/jquery.js' ) %>
+	<% scripts.push( '/vendor/modernizr.js' ) %>
+	<% scripts.push( '/vendor/log.js' )%>
+	<% scripts.push( '/scripts/script.js' )%>
+	<%- @getBlock('scripts').add( scripts ).toHTML() %>
 </body>
 </html>

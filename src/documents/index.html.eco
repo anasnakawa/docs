@@ -3,6 +3,8 @@ layout: 'default'
 title: 'Home'
 ---
 
+<%- @partial('something.html.eco', { text: 'pass me this' }) %>
+
 <!-- Main hero unit for a primary marketing message or call to action -->
 <div class="hero-unit">
 	<h1>Welcome to your new site!</h1>
