@@ -38,7 +38,8 @@
     
     
     
-    <link rel="stylesheet" href="/components/bootstrap-sass/bootstrap-2.3.0.min.css" /><link rel="stylesheet" href="/components/bootstrap-sass/bootstrap-2.3.0.min.css" /><link rel="stylesheet" href="/styles/style.css" />
+    
+    <link rel="stylesheet" href="/components/bootstrap-sass/bootstrap-2.3.0.min.css" /><link rel="stylesheet" href="/components/bootstrap-sass/bootstrap-responsive-2.3.0.min.css" /><link rel="stylesheet" href="/components/highlight.js/src/styles/monokai.css" /><link rel="stylesheet" href="/styles/style.css" />
 </head>
 <body>
     <!-- Markup -->
@@ -47,24 +48,22 @@
             <div class="container">
                 <a class="brand" href="/">Welcome</a>
                 <ul class="nav">
-                    
-                        <li typeof="sioc:Page" about="/pages/hello.html" class="">
-                            <a href="/pages/hello.html" property="dc:title">This is a Page</a>
-                        </li>
-                    
-                        <li typeof="sioc:Page" about="/pages/posts.html" class="">
-                            <a href="/pages/posts.html" property="dc:title">Posts</a>
-                        </li>
-                    
+                  
+            <li typeof="sioc:Page" about="/foo/index.html" class="">
+              <a href="/foo/index.html" property="dc:title">Foo Welcome Page</a>
+            </li>
+          
+            <li typeof="sioc:Page" about="/bar/index.html" class="">
+              <a href="/bar/index.html" property="dc:title">Welcome to Bar</a>
+            </li>
+          
                 </ul>
             </div>
         </div>
     </div>
     <div class="container">
         <section id="content" class="content">
-            <h1>pass me this</h1>
-
-<!-- Main hero unit for a primary marketing message or call to action -->
+            <!-- Main hero unit for a primary marketing message or call to action -->
 <div class="hero-unit">
     <h1>Welcome to your new site!</h1>
     <p>
@@ -93,6 +92,7 @@
 </div>
         </section>
         <footer>
+          <hr />
             <p>&copy; Docs 2013</p>
         </footer>
     </div><!-- /container -->
@@ -102,7 +102,40 @@
     
     
     
-    
-    <script defer="defer"  src="/vendor/jquery.js"></script><script defer="defer"  src="/vendor/modernizr.js"></script><script defer="defer"  src="/vendor/log.js"></script><script defer="defer"  src="/scripts/script.js"></script>
+    <script >(function(){
+	// Did we just livereload?
+var log = true && localStorage && console && console.log && true;
+if ( log && localStorage.getItem('/docpad-livereload/reloaded') === 'yes' ) {
+	localStorage.removeItem('/docpad-livereload/reloaded');
+	console.log('LiveReloaded at', new Date())
+}
+
+// Listen for the regenerated event
+// and perform a reload of the page when the event occurs
+var listen = function(){
+	var socket = io.connect('/docpad-livereload');
+	socket.on('regenerated',function(){
+		if ( log ) {
+	localStorage.setItem('/docpad-livereload/reloaded', 'yes');
+}
+document.location.reload();
+	});
+};
+	if ( typeof io !== 'undefined' ) {
+		listen();
+	} else {
+		// Inject socket.io into our page then listen once loaded
+var inject = function(){
+	var t = document.createElement('script');
+	t.type = 'text/javascript';
+	t.async = true;
+	t.src = '/socket.io/socket.io.js';
+	t.onload = listen;
+	var s = document.getElementsByTagName('script')[0];
+	s.parentNode.insertBefore(t,s);
+};
+		inject();
+	}
+})();</script><script defer="defer"  src="/components/jquery/jquery.js"></script><script defer="defer"  src="/components/quicksearch/jquery.quicksearch.js"></script><script defer="defer"  src="/js/main.js"></script>
 </body>
 </html>

@@ -36,9 +36,10 @@
 	<!-- Styles -->
 	<% styles = [] %>
 	<% styles.push( '/components/bootstrap-sass/bootstrap-2.3.0.min.css' ) %>
-	<% styles.push( '/components/bootstrap-sass/bootstrap-2.3.0.min.css' ) %>
+	<% styles.push( '/components/bootstrap-sass/bootstrap-responsive-2.3.0.min.css' ) %>
+	<% styles.push( '/components/highlight.js/src/styles/monokai.css' ) %>
 	<% styles.push( '/styles/style.css' ) %>
-	<%- @getBlock('styles').add( styles ).toHTML() %>
+	<%- @getBlock( 'styles' ).add( styles ).toHTML() %>
 </head>
 <body>
 	<!-- Markup -->
@@ -47,11 +48,11 @@
 			<div class="container">
 				<a class="brand" href="/">Welcome</a>
 				<ul class="nav">
-					<% for document in @getCollection('pages').toJSON(): %>
-						<li typeof="sioc:Page" about="<%= document.url %>" class="<%= 'active'  if @document.url is document.url %>">
-							<a href="<%= document.url %>" property="dc:title"><%= document.title %></a>
-						</li>
-					<% end %>
+				  <% for rootPage in @getDatabase().findAll(nav: 'parent', hidden: $exists: false, [order: 1]).toJSON(): %>
+            <li typeof="sioc:Page" about="<%= rootPage.url %>" class="<%= 'active'  if @document.url is rootPage.url %>">
+              <a href="<%= rootPage.url %>" property="dc:title"><%= rootPage.title %></a>
+            </li>
+          <% end %>
 				</ul>
 			</div>
 		</div>
@@ -61,16 +62,16 @@
 			<%- @content %>
 		</section>
 		<footer>
+		  <hr />
 			<p>&copy; Docs <%= new Date().getFullYear()%></p>
 		</footer>
 	</div><!-- /container -->
 
 	<!-- Scripts -->
 	<% scripts = [] %>
-	<% scripts.push( '/vendor/jquery.js' ) %>
-	<% scripts.push( '/vendor/modernizr.js' ) %>
-	<% scripts.push( '/vendor/log.js' )%>
-	<% scripts.push( '/scripts/script.js' )%>
-	<%- @getBlock('scripts').add( scripts ).toHTML() %>
+	<% scripts.push( '/components/jquery/jquery.js') %>
+	<% scripts.push( '/components/quicksearch/jquery.quicksearch.js' )%>
+	<% scripts.push( '/js/main.js' )%>
+	<%- @getBlock( 'scripts' ).add( scripts ).toHTML() %>
 </body>
 </html>

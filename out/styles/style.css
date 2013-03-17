@@ -1,1 +1,31 @@
-a,a:link{cursor:pointer}body{padding-top:60px}table tfoot th,table tbody th{border-top:1px solid #DDD}
+a,
+a:link {
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 981px) {
+  body {
+    padding-top: 60px;
+  }
+}
+
+@media only screen and (max-width: 980px) {
+  .navbar-fixed-top .navbar-inner,
+  .navbar-fixed-bottom .navbar-inner {
+    padding: 0;
+  }
+}
+
+table tfoot th, table tbody th {
+  border-top: 1px solid #DDD;
+}
+
+pre {
+  padding: 0;
+}
+pre code {
+  border: 1px solid black;
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset;
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset;
+}

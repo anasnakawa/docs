@@ -1,0 +1,9 @@
+{
+  "name": "quicksearch",
+  "version": "0.0.0",
+  "commit": "704426a8b9070960e80b68d0fc998c88a67a94a2",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/riklomas/quicksearch.git"
+  }
+}

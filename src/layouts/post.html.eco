@@ -2,22 +2,26 @@
 layout: default
 ---
 
-<article id="post" class="post">
-	<h1><%= @document.title %></h1>
-	<div class="post-content"><%- @content %></div>
-</article>
-
-<footer>
-	<% if  @document.relatedDocuments and @document.relatedDocuments.length: %>
-	<section id="related">
-		<h3>Related Posts</h3>
-		<nav class="linklist">
-			<% for document in @document.relatedDocuments: %>
-				<li><span><%= document.date.toShortDateString() %></span>
-				&raquo;
-				<a href="<%= document.url %>"><%= document.title %></a></li>
-			<% end %>
-		</nav>
-	</section>
-	<% end %>
-</footer>
+<div class="row">
+  <div class="span3">
+    <ul class="nav nav-list well" id="navigation">
+      <li class="search-skip">
+        <form class="form-search">
+          <input id="quicksearch" type="text" class="search-query" placeholder="search"/>
+        </form>
+      </li>
+      <li class="divider search-skip"></li>
+      <% for childPage in @getDatabase().findAll(nav: 'child', category: @document.meta.category, hidden: $exists: false, [order: 1]).toJSON(): %>
+        <li typeof="sioc:Page" about="<%= childPage.url %>" class="<%= 'active'  if @document.url is childPage.url %>">
+          <a href="<%= childPage.url %>" property="dc:title"><%= childPage.title %></a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="span9">
+    <article id="post" class="post">
+      <h1><%= @document.title %></h1>
+      <div class="post-content"><%- @content %></div>
+    </article>
+  </div>
+</div>
